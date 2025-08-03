@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Omer!</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      padding: 50px;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    #person {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    h1 {
+      font-size: 60px;
+      color: #ff4081;
+      animation: bounce 1s infinite;
+    }
+
+    h2 {
+      font-size: 30px;
+      color: #fff;
+      margin: 10px 0;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(15px); }
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      animation: confetti-fall 5s linear infinite;
+    }
+
+    @keyframes confetti-fall {
+      0% { transform: translateY(-100px) rotate(0deg); }
+      100% { transform: translateY(100vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="person">
+    <h2>🎈 HappY Birth Day 🎈</h2>
+    <h1>Manar Awadh</h1>
+    <h2>🎂 6/8 🎂</h2>
+  </div>
+
+  <!-- Confetti (generate multiple using JS for effect) -->
+  <script>
+    for (let i = 0; i < 100; i++) {
+      let confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+      confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      document.body.appendChild(confetti);
+    }
+  </script>
+
+</body>
+</html>
